@@ -1,8 +1,7 @@
 # 10 Academy week 1 challenges
 ## Getting Started
 
-These instructions will guide you through the process of setting up and running the media_trends_10ac_week0
-
+These instructions will guide you through the process of setting up and running the telecom_user_insights_10ac_week1
 ### Prerequisites
 
 1. Python 3.x and pip (Usually bundled with Python installation)
