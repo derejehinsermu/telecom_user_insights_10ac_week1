@@ -1,0 +1,23 @@
+pandas==2.2.2
+numpy
+streamlit
+matplotlib==3.8.4
+seaborn==0.13.2
+sqlalchemy==2.0.29
+psycopg2-binary==2.9.9
+python-dotenv==1.0.1
+
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+sudo service postgresql restart
+sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
+sudo rm -rf /etc/postgresql/
+sudo rm -rf /var/lib/postgresql/
+sudo rm -rf /var/log/postgresql/
+sudo rm -rf /usr/lib/postgresql/
+sudo deluser postgres
+sudo delgroup postgres
+#password
+ALTER USER postgres WITH PASSWORD 'newpassword';
+
+
