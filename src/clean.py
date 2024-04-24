@@ -21,8 +21,8 @@ def clean_data(df):
         
         for col in numerical_cols:
             if col in df.columns:
-                median_value = df[col].median()
-                df[col] = df[col].fillna(median_value)
+                median_value = df[col].median(skipna=True)  # Calculate median ignoring NA
+                df[col] = df[col].fillna(median_value) # Fill NA with median value
 
         # Categorical columns: Replace 'undefined' or missing values with the mode for 'Handset Type'
         if 'Handset Type' in df.columns:

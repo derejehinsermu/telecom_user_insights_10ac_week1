@@ -53,66 +53,25 @@ def get_top_handsets_by_top_manufacturers(df):
 
 
 
-import pandas as pd
-
 def calculate_total_usage(df):
     """
-    Calculate the total data usage for each application category by summing the
-    download and upload bytes.
-
+    Calculate the total data usage for each application category.
+    
     Parameters:
-        df (pandas.DataFrame): DataFrame containing the xDR data.
-
+        df (pandas.DataFrame): Dataframe containing the xDR data.
+    
     Returns:
-        pandas.DataFrame: DataFrame with each application's total data usage added as new columns.
+        pandas.DataFrame: Dataframe with each application's total data usage added as new columns.
     """
-    apps = ['Social Media', 'Google', 'Email', 'Youtube', 'Netflix', 'Gaming', 'Other']
-    for app in apps:
-        dl_col = f'{app} DL (Bytes)'
-        ul_col = f'{app} UL (Bytes)'
-        total_col = f'Total {app} (Bytes)'
-        df[dl_col] = pd.to_numeric(df[dl_col], errors='coerce').fillna(0)
-        df[ul_col] = pd.to_numeric(df[ul_col], errors='coerce').fillna(0)
-        df[total_col] = df[dl_col] + df[ul_col]
-
+    df['Total Social Media (Bytes)'] = df['Social Media DL (Bytes)'] + df['Social Media UL (Bytes)']
+    df['Total Google (Bytes)'] = df['Google DL (Bytes)'] + df['Google UL (Bytes)']
+    df['Total Email (Bytes)'] = df['Email DL (Bytes)'] + df['Email UL (Bytes)']
+    df['Total Youtube (Bytes)'] = df['Youtube DL (Bytes)'] + df['Youtube UL (Bytes)']
+    df['Total Netflix (Bytes)'] = df['Netflix DL (Bytes)'] + df['Netflix UL (Bytes)']
+    df['Total Gaming (Bytes)'] = df['Gaming DL (Bytes)'] + df['Gaming UL (Bytes)']
+    df['Total Other (Bytes)'] = df['Other DL (Bytes)'] + df['Other UL (Bytes)']
+    
     return df
-
-def aggregate_user_data(df):
-    """
-    Aggregate user data to analyze behavior on telecommunications applications.
-    Calculates totals first and then aggregates this data per user.
-
-    Parameters:
-        df (pandas.DataFrame): DataFrame that has been preprocessed to include total usage columns.
-
-    Returns:
-        pandas.DataFrame: Aggregated DataFrame by user with counts and sums of usage and sessions.
-    """
-    # Calculate totals first
-    df = calculate_total_usage(df)
-    
-    # Define the columns to aggregate
-    aggregation_dict = {
-        'Bearer Id': ('number_of_xdr_sessions', 'count'),
-        'Dur. (ms)': ('total_duration', 'sum'),
-        'Total DL (Bytes)': ('total_download', 'sum'),
-        'Total UL (Bytes)': ('total_upload', 'sum')
-    }
-    
-    apps = ['Social Media', 'Google', 'Email', 'Youtube', 'Netflix', 'Gaming', 'Other']
-    for app in apps:
-        aggregation_dict[f'Total {app} (Bytes)'] = (f'total_{app.lower()}', 'sum')
-
-    # Aggregate the data per user
-    aggregated_df = df.groupby('MSISDN/Number').agg(**{v[0]: (k, v[1]) for k, v in aggregation_dict.items()})
-    
-    return aggregated_df
-
-# Example of usage in a script where 'df' is your loaded and possibly initially cleaned DataFrame
-# df = load_data(query)  # Your function to load data
-# aggregated_user_df = aggregate_user_data(df)
-# print(aggregated_user_df.head())
-
 
 
 def calculate_average_usage(df):
