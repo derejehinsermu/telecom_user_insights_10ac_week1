@@ -22,7 +22,7 @@ These instructions will guide you through the process of setting up and running 
 2. **Create and Activate a Virtual Environment**
     Navigate to the root directory of the project and create a virtual environment named 'venv', then activate it:
     ```sh
-    cd media_trends_10ac_week0.git
+    cd telecom_user_insights_10ac_week1
     python -m venv venv  | virtualenv venv
     source venv/bin/activate
     ```
