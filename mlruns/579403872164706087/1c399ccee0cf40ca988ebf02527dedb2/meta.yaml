@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/Air/10x-project/telecom_user_insights_10ac_week1/mlruns/579403872164706087/1c399ccee0cf40ca988ebf02527dedb2/artifacts
+end_time: 1714218109210
+entry_point_name: ''
+experiment_id: '579403872164706087'
+lifecycle_stage: active
+run_id: 1c399ccee0cf40ca988ebf02527dedb2
+run_name: rare-donkey-942
+run_uuid: 1c399ccee0cf40ca988ebf02527dedb2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714218085329
+status: 3
+tags: []
+user_id: Air

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/Air/10x-project/telecom_user_insights_10ac_week1/mlruns/579403872164706087/c5148f34a88842bd937b5acd80a4540b/artifacts
+end_time: 1714218515268
+entry_point_name: ''
+experiment_id: '579403872164706087'
+lifecycle_stage: active
+run_id: c5148f34a88842bd937b5acd80a4540b
+run_name: grandiose-shark-501
+run_uuid: c5148f34a88842bd937b5acd80a4540b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714218501039
+status: 3
+tags: []
+user_id: Air

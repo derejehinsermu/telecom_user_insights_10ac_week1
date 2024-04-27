@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/Air/10x-project/telecom_user_insights_10ac_week1/mlruns/579403872164706087/e3c394351e9149929eb388571936031a/artifacts
+end_time: 1714220012037
+entry_point_name: ''
+experiment_id: '579403872164706087'
+lifecycle_stage: active
+run_id: e3c394351e9149929eb388571936031a
+run_name: nervous-cat-754
+run_uuid: e3c394351e9149929eb388571936031a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714219997911
+status: 3
+tags: []
+user_id: Air
